@@ -1,0 +1,235 @@
+{
+  "items": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4gzpq5DPGxSnKTe4SA8HAU"
+      },
+      "followers": {
+        "href": null,
+        "total": 9432484
+      },
+      "genres": [
+        "permanent wave",
+        "pop",
+        "pop christmas"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4gzpq5DPGxSnKTe4SA8HAU",
+      "id": "4gzpq5DPGxSnKTe4SA8HAU",
+      "images": [
+        {
+          "height": 1000,
+          "url": "https://i.scdn.co/image/143b0f286f76ece3a711f673d9ba00b8f499b2c0",
+          "width": 1000
+        },
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/9815eb48540fa0d1c87ebd22289060729b1ab32a",
+          "width": 640
+        },
+        {
+          "height": 200,
+          "url": "https://i.scdn.co/image/02c781539fca2176059bdeafd9fa903db5b9a4d0",
+          "width": 200
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/d82a669c531c06b703c7468a8981424581f14e91",
+          "width": 64
+        }
+      ],
+      "name": "Coldplay",
+      "popularity": 92,
+      "type": "artist",
+      "uri": "spotify:artist:4gzpq5DPGxSnKTe4SA8HAU"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2h93pZq0e7k5yf4dywlkpM"
+      },
+      "followers": {
+        "href": null,
+        "total": 2696101
+      },
+      "genres": [
+        "dance pop",
+        "indie r&b",
+        "neo soul",
+        "pop",
+        "pop rap",
+        "rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2h93pZq0e7k5yf4dywlkpM",
+      "id": "2h93pZq0e7k5yf4dywlkpM",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/7db34c8aace6feb91f38601bb75e6b3301b4657a",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/0cc22250c0b18183e5c62f240a5756ec5226dee1",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/e42028e7fe5a7ba790b5b4e7b096b06bf3319443",
+          "width": 160
+        }
+      ],
+      "name": "Frank Ocean",
+      "popularity": 86,
+      "type": "artist",
+      "uri": "spotify:artist:2h93pZq0e7k5yf4dywlkpM"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6zFYqv1mOsgBRQbae3JJ9e"
+      },
+      "followers": {
+        "href": null,
+        "total": 852949
+      },
+      "genres": [
+        "adult standards",
+        "album rock",
+        "classic rock",
+        "folk rock",
+        "mellow gold",
+        "neo mellow",
+        "piano rock",
+        "pop rock",
+        "rock",
+        "singer-songwriter",
+        "soft rock"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6zFYqv1mOsgBRQbae3JJ9e",
+      "id": "6zFYqv1mOsgBRQbae3JJ9e",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/9bf33c517d33c5c6a4417645ae7bab81be43441a",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/3cabf313fa5f63d78583c215460340d010a2bf64",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/741b5b90cdce5b82abed29e02f6d175ae6f180f2",
+          "width": 160
+        }
+      ],
+      "name": "Billy Joel",
+      "popularity": 77,
+      "type": "artist",
+      "uri": "spotify:artist:6zFYqv1mOsgBRQbae3JJ9e"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4LG4Bs1Gadht7TCrMytQUO"
+      },
+      "followers": {
+        "href": null,
+        "total": 668463
+      },
+      "genres": [
+        "albuquerque indie",
+        "alternative rock",
+        "chamber pop",
+        "folk christmas",
+        "folk-pop",
+        "garage rock",
+        "indie christmas",
+        "indie folk",
+        "indie pop",
+        "indie rock",
+        "indietronica",
+        "lo-fi",
+        "modern rock",
+        "neo-psychedelic",
+        "pop rock",
+        "stomp and holler"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4LG4Bs1Gadht7TCrMytQUO",
+      "id": "4LG4Bs1Gadht7TCrMytQUO",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/e9e850f299d7715eb1b05e07d8af3bfc98b6f9c5",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/3e473d3bf8bcbaf921082b554b0ceee47832b3cc",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/37a10c2b4cc60a984f8453c45e2984fe5840e217",
+          "width": 160
+        }
+      ],
+      "name": "The Shins",
+      "popularity": 71,
+      "type": "artist",
+      "uri": "spotify:artist:4LG4Bs1Gadht7TCrMytQUO"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2hGh5VOeeqimQFxqXvfCUf"
+      },
+      "followers": {
+        "href": null,
+        "total": 525353
+      },
+      "genres": [
+        "bebop",
+        "contemporary post-bop",
+        "cool jazz",
+        "free jazz",
+        "hard bop",
+        "jazz",
+        "jazz blues",
+        "jazz christmas",
+        "vocal jazz"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2hGh5VOeeqimQFxqXvfCUf",
+      "id": "2hGh5VOeeqimQFxqXvfCUf",
+      "images": [
+        {
+          "height": 1342,
+          "url": "https://i.scdn.co/image/12aa1cbaad5f077082c0e7e70104fe658bc6318b",
+          "width": 1000
+        },
+        {
+          "height": 859,
+          "url": "https://i.scdn.co/image/eebba87358e8de1bf65200a2950926c3dde99f15",
+          "width": 640
+        },
+        {
+          "height": 268,
+          "url": "https://i.scdn.co/image/38d46aa5522fa6235cce269beb5dee3540aa9667",
+          "width": 200
+        },
+        {
+          "height": 86,
+          "url": "https://i.scdn.co/image/17f7d42f74a32c7051dbc3783b3c5d4c092dd403",
+          "width": 64
+        }
+      ],
+      "name": "John Coltrane",
+      "popularity": 69,
+      "type": "artist",
+      "uri": "spotify:artist:2hGh5VOeeqimQFxqXvfCUf"
+    }
+  ],
+  "total": 10,
+  "limit": 10,
+  "offset": 5,
+  "href": "https://api.spotify.com/v1/me/top/artists?limit=10&offset=5",
+  "previous": null,
+  "next": null
+}
