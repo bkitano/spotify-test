@@ -1,23 +1,45 @@
 import React, { Component } from 'react';
 import FlatButton from 'material-ui/FlatButton';
+import queryString from 'query-string';
+
+function randomString(length) {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < length; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
 
 class Landing extends Component {
     
-    onClick(e) {
-        console.log('clicked');
-        if( localStorage.getItem('count') ) {
-            const count = localStorage.getItem('count');
-            localStorage.setItem('count', count + 1);
-        } else {
-            localStorage.setItem('count', 1);
+    login() {
+        
+        var url = 'https://accounts.spotify.com/authorize';
+        
+        var stateKey = randomString(8);
+        localStorage.setItem('state', stateKey);
+        
+        var params = {
+            client_id: '898ce043624a4b3fa215a8819f8db66f',
+            response_type: 'token',
+            redirect_uri: 'http://spotify-test-bkitano.c9users.io/#/callback',
+            state: stateKey,
+            scope: 'user-top-read'
         }
-        console.log(localStorage.getItem('count'));
+        
+        var paramString = queryString.stringify(params);
+        
+        var reqURL = url + '?' + paramString;
+        
+        window.open(reqURL);
     }
     
     render() {
         return (
             <div>
-                <FlatButton label="cookie test" onClick={e => this.onClick(e)} />
+                <FlatButton label="login" onClick={e => this.login()} />
             </div>
             )
     }
