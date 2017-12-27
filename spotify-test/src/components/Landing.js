@@ -20,6 +20,7 @@ class Landing extends Component {
         
         var stateKey = randomString(8);
         localStorage.setItem('state', stateKey);
+        localStorage.setItem('token_exp', Date.now() + 3600000);
         
         var params = {
             client_id: '898ce043624a4b3fa215a8819f8db66f',
