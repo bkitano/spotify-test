@@ -58,3 +58,15 @@ Then, it will dynamically add songs to the queue, based on
 either requests made by attendees, or by aggregated group
 suggestions, using the Spotify seed call. 
 
+### The Components
+
+There's a DJ View and a Guest View. The DJ creates a Party, which is an object
+that contains a list of Guests and a playlist. 
+
+### Unstructured Notes
+
+So perhaps this is how the structure should work:
+
+1. In a large Container component, we call the API. We then put all of that data into the state.
+2. Every time we need to use data from the API in a component, we pass the data in as a prop.
+

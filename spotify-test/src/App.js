@@ -18,7 +18,7 @@ class App extends Component {
         <HashRouter>
           <MuiThemeProvider>
             <div className='container'>
-              <Route path='/' component={Landing} />
+              <Route exact path='/' component={Landing} />
             </div>
           </MuiThemeProvider>
         </HashRouter>
