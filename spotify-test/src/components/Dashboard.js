@@ -9,7 +9,7 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            a: 1
+            name: ''
         };
     }
     
@@ -18,9 +18,7 @@ class Dashboard extends Component {
         const tokenString = window.location.href.split('/')[4];
         var tokens = queryString.parse(tokenString);
         
-        console.log(tokens);
-        
-        if(tokens !== null && localStorage.state == tokens.state) {
+        if(tokens !== null && localStorage.state === tokens.state) {
             localStorage.setItem('token', tokens.access_token);
         }
         
@@ -30,12 +28,17 @@ class Dashboard extends Component {
         
         Spotify.setAccessToken(tokens.access_token);
         
-        Spotify.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
-            .then(function(data) {
-            console.log('Artist albums', data.body);
-            }, function(err) {
-            console.error(err);
-            });
+        // Get the authenticated user
+        Spotify.getMe().then( data => {
+            
+            this.setState({name: data.body.display_name});
+            console.log('Some information about the authenticated user', data.body);
+            
+            
+        }, function(err) {
+            console.log('Something went wrong!', err);
+        });
+
     }
     
     render() {
@@ -44,10 +47,10 @@ class Dashboard extends Component {
             <div>
                 <Card>
                     <CardHeader>
-                        Token
+                        Info
                     </CardHeader>
                     <CardText>
-                        {localStorage.getItem('token')}
+                        {this.state.name}
                     </CardText>
                 </Card>
             </div>
