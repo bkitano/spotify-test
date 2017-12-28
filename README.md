@@ -70,3 +70,36 @@ So perhaps this is how the structure should work:
 1. In a large Container component, we call the API. We then put all of that data into the state.
 2. Every time we need to use data from the API in a component, we pass the data in as a prop.
 
+https://developer.spotify.com/web-api/authorization-guide/#implicit_grant_flow
+
+acousticness:0.0212
+danceability:0.604
+duration_ms:187253
+energy:0.894
+instrumentalness:0
+liveness:0.0299
+loudness:-5
+speechiness:0.037
+tempo:145.014
+valence:0.901
+
+var features = this.state.tracks.map( track => {
+            Spotify.getAudioFeaturesForTrack(track.id).then( feature => {
+                
+                var metrics = {
+                    acousticness: feature.body.acousticness,
+                    danceability: feature.body.danceability,
+                    duration_ms: feature.body.duration_ms,
+                    energy: feature.body.energy,
+                    instrumentalness: feature.body.instrumentalness,
+                    liveness: feature.body.liveness,
+                    loudness: feature.body.loudness,
+                    speechiness: feature.body.speechiness,
+                    tempo: feature.body.tempo,
+                    valence: feature.body.valence
+                }
+                
+                console.log(metrics);
+                return metrics;
+            });
+        }); // end of features

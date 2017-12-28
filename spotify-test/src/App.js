@@ -10,15 +10,26 @@ import {
 } from 'react-router-dom';
 
 import Landing from './components/Landing';
+import Dashboard from './components/Dashboard';
+import PrivateRoute from './components/PrivateRoute';
 
 class App extends Component {
+  
+  
   render() {
+    
+    var styles = {
+      'margin': '10px'
+    }
+  
+    
     return (
-      <div className="App">
+      <div className="App" style={styles}>
         <HashRouter>
           <MuiThemeProvider>
             <div className='container'>
               <Route exact path='/' component={Landing} />
+              <PrivateRoute path='/:tokens' component={Dashboard} />
             </div>
           </MuiThemeProvider>
         </HashRouter>
