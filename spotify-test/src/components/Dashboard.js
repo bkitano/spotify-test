@@ -64,7 +64,7 @@ class Dashboard extends Component {
                         album: item.album.name,
                         artist: item.artists[0].name,
                         artist_id: item.artists[0].id,
-                        album_artwork: item.album.images[0].url,
+                        album_artwork: item.album.images[1].url,
                         popularity: item.popularity,
                         preview_url: item.preview_url
                     }
@@ -153,26 +153,26 @@ class Dashboard extends Component {
         
         
         var container_style = {
-            'margin' : '10px',
+            'position': 'relative',
+            'margin' : 'auto',
             'display' : 'grid',
-            'gridTemplateRows' : '1fr 1fr ',
-            'gridTemplateColumns' : '1fr 1fr 1fr 1fr 1fr'
-        };
+            'gridTemplateColumns' : '1fr',
+            'width' : 'auto',
+        }
         
         return (
             
             <div style={container_style}>
+                <Card>
+                    <CardTitle title={this.state.name.split(" ")[0] + "'s Top Tracks"} />
+                </Card>
                     {this.state.totals.map( total => {
                     
                         var trackString = queryString.stringify(total.track);
                         var featureString = queryString.stringify(total.features);
                         var totalString = queryString.stringify({track: trackString, features: featureString});
                         return (
-                            <Card key={randomString(5)}>                        
-                                <CardMedia >
-                                    <Song preview_url={total.track.preview_url} name={total.track.name} artist={total.track.artist} album_artwork={total.track.album_artwork} totalString={totalString} />
-                                </CardMedia>
-                            </Card>
+                            <Song key={randomString(5)} preview_url={total.track.preview_url} name={total.track.name} artist={total.track.artist} album_artwork={total.track.album_artwork} totalString={totalString} />
                         );
                     })}
             </div>

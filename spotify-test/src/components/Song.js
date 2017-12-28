@@ -4,8 +4,6 @@ import ReactAudioPlayer from 'react-audio-player';
 
 import {Card, CardMedia, CardTitle} from 'material-ui/Card';
 
-import Player from './Player';
-
 class Song extends Component {
     
     constructor(props) {
@@ -27,32 +25,40 @@ class Song extends Component {
     
     render() {
         
-        var style_imageOne = {
-            'position': 'absolute',
-            'z-index': '0'
-        }
-        
-        var style_imageTwo = {
-            'position': 'absolute',
-            'width': '100px',
-            'z-index': '1'
-        }
-        
-        var style_container = {
-            'position': 'relative'
-        }
-
         var total = queryString.parse(this.state.total);
         var parsedTotal = {};
         parsedTotal.features = queryString.parse(total.features);
         parsedTotal.track = queryString.parse(total.track);
         
+        var style_album_play = {
+            'margin':'10px',
+            'opacity':'0.5',
+            'padding' : '10px'
+        }
+        
+        var style_album_pause = {
+            'margin':'10px',
+        }
+        
+        var style_info_hidden = {
+            'hidden':'true'
+        }
+        
+        var style_info = {
+            'margin':'auto'
+        }
+        
         return (
-            <div style={style_container}>
-                <div style={style_imageOne} onClick={e => this.onToggle(e)} className={!this.state.play ? "icon ion-play" : "icon ion-pause"} />
-                <img style={style_imageTwo} src={parsedTotal.track.album_artwork} alt="" />
-                <audio src={this.props.preview_url} ref={(audio) => { this.audio = audio }}/>
-            </div>
+            <Card >
+                <div style={this.state.play ? style_album_play : style_album_pause} onClick={e => this.onToggle(e)}>
+                    <CardMedia
+                      overlay={<CardTitle title={this.props.name} subtitle={this.props.artist} />}
+                    >
+                        <img src={parsedTotal.track.album_artwork} alt="" />
+                    </CardMedia>
+                </div>
+                <audio src={this.props.preview_url} ref={(audio) => { this.audio = audio }} volume=".5" />
+            </Card>
             )
     }
 }
