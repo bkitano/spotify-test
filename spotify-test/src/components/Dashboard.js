@@ -55,8 +55,9 @@ class Dashboard extends Component {
             
             Spotify.getMyTopTracks({limit: 10, time_range: 'long_term'}).then( trackData => {
                 
+                console.log(trackData.body);
+
                 var tracks = trackData.body.items.map( item => {
-                    console.log(item)
                     var track = {
                         id: item.id,
                         name: item.name,
@@ -64,7 +65,8 @@ class Dashboard extends Component {
                         artist: item.artists[0].name,
                         artist_id: item.artists[0].id,
                         album_artwork: item.album.images[0].url,
-                        popularity: item.popularity
+                        popularity: item.popularity,
+                        preview_url: item.preview_url
                     }
                         
                     return track;
@@ -91,7 +93,7 @@ class Dashboard extends Component {
                             target_tempo: 0.,
                             target_valence: 0.
                         }
-
+                        
                     for(var i = 0; i < features.body.audio_features.length; i++) {
                         
                         featureSums = {    
@@ -137,10 +139,8 @@ class Dashboard extends Component {
                     var subtracks = ids.splice(0,5);
                     seed.seed_tracks = subtracks;
                     
-                    console.log(seed);
-                    
                     Spotify.getRecommendations(seed).then( seeds => {
-                        console.log(seeds);
+                        // console.log(seeds);
                     });
                     
                 });
@@ -150,34 +150,31 @@ class Dashboard extends Component {
     }
     
     render() {
-        console.log(this.state.averages);
         
-        var styles = {
+        
+        var container_style = {
             'margin' : '10px',
-            'width' : '300px'
+            'display' : 'grid',
+            'gridTemplateRows' : '1fr 1fr ',
+            'gridTemplateColumns' : '1fr 1fr 1fr 1fr 1fr'
         };
         
         return (
-            <div>
-                <Card>
-                    <CardTitle title={this.state.name.split(" ")[0] + "'s top tracks"} />
+            
+            <div style={container_style}>
                     {this.state.totals.map( total => {
                     
                         var trackString = queryString.stringify(total.track);
                         var featureString = queryString.stringify(total.features);
                         var totalString = queryString.stringify({track: trackString, features: featureString});
-                        
                         return (
-                            <div style={styles} key={randomString(5)}>
-                                <Song 
-                                name={total.track.name} 
-                                artist={total.track.artist} 
-                                album_artwork={total.track.album_artwork}
-                                totalString={totalString} />
-                            </div>
+                            <Card key={randomString(5)}>                        
+                                <CardMedia >
+                                    <Song preview_url={total.track.preview_url} name={total.track.name} artist={total.track.artist} album_artwork={total.track.album_artwork} totalString={totalString} />
+                                </CardMedia>
+                            </Card>
                         );
                     })}
-                </Card>
             </div>
             );
     }
