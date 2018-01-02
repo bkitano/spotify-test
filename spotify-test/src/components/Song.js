@@ -51,7 +51,7 @@ class Song extends Component {
         return (
             <Card >
                 <div style={this.state.play ? style_album_play : style_album_pause} onClick={e => this.onToggle(e)}>
-                    <CardMedia
+                    <CardMedia 
                       overlay={<CardTitle title={this.props.name} subtitle={this.props.artist} />}
                     >
                         <img src={parsedTotal.track.album_artwork} alt="" />

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "d3": "^4.12.2",
+    "ionicons": "^3.0.0",
     "material-ui": "^0.20.0",
     "query-string": "^5.0.1",
     "react": "^16.2.0",

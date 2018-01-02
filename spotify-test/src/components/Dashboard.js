@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import queryString from 'query-string';
 import spotifyWebAPI from 'spotify-web-api-node';
 
-import {Card, CardHeader, CardTitle, CardMedia, CardText} from 'material-ui/Card';
+import {Card, CardTitle, CardActions} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+
 
 import Song from './Song';
 
@@ -23,11 +25,31 @@ class Dashboard extends Component {
         this.state = {
             name: '',
             averages: {},
-            totals: []
+            totals: [],
+            time_range: 'short_term'
         };
     }
     
     componentDidMount() {
+        this.loadTracks();
+    }
+    
+    short() {
+        this.setState({time_range: 'short_term'});
+        this.loadTracks();
+    }
+    
+    medium() {
+        this.setState({time_range: 'medium_term'});
+        this.loadTracks();
+    }
+    
+    long() {
+        this.setState({time_range: 'long_term'});
+        this.loadTracks();
+    }
+    
+    loadTracks() {
 
         localStorage.setItem( 'token_exp', Date.now() + 3600000 );
 
@@ -53,7 +75,7 @@ class Dashboard extends Component {
                 console.log('Something went wrong!', err);
             });
             
-            Spotify.getMyTopTracks({limit: 10, time_range: 'long_term'}).then( trackData => {
+            Spotify.getMyTopTracks({limit: 10, time_range: this.state.time_range}).then( trackData => {
                 
                 console.log(trackData.body);
 
@@ -140,7 +162,7 @@ class Dashboard extends Component {
                     seed.seed_tracks = subtracks;
                     
                     Spotify.getRecommendations(seed).then( seeds => {
-                        // console.log(seeds);
+                        console.log(seeds);
                     });
                     
                 });
@@ -151,7 +173,8 @@ class Dashboard extends Component {
     
     render() {
         
-        
+        console.log(this.state.totals);
+            
         var container_style = {
             'position': 'relative',
             'margin' : 'auto',
@@ -165,7 +188,12 @@ class Dashboard extends Component {
             <div style={container_style}>
                 <Card>
                     <CardTitle title={this.state.name.split(" ")[0] + "'s Top Tracks"} />
-                </Card>
+                    <CardActions>
+                      <FlatButton label="4 weeks" onClick={ (e) => { this.short() } }/>
+                      <FlatButton label="6 months" onClick={ (e) => { this.medium() } }/>
+                      <FlatButton label="all time" onClick={ (e) => { this.long() } }/>
+                    </CardActions>                
+                    </Card>
                     {this.state.totals.map( total => {
                     
                         var trackString = queryString.stringify(total.track);

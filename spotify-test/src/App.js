@@ -11,7 +11,6 @@ import {
 
 import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
-import PrivateRoute from './components/PrivateRoute';
 
 class App extends Component {
   
@@ -29,7 +28,7 @@ class App extends Component {
           <MuiThemeProvider>
             <div className='container'>
               <Route exact path='/' component={Landing} />
-              <PrivateRoute path='/:tokens' component={Dashboard} />
+              <Route path='/:tokens' component={Dashboard} />
             </div>
           </MuiThemeProvider>
         </HashRouter>
